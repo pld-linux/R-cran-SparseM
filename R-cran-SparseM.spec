@@ -2,12 +2,12 @@
 %define		modulename	SparseM
 Summary:	Sparse Linear Algebra
 Name:		R-cran-%{modulename}
-Version:	1.03
-Release:	2
+Version:	1.84r2
+Release:	1
 License:	GPL
 Group:		Applications/Databases
-Source0:	http://cran.r-project.org/src/contrib/%{modulename}_%{fversion}.tar.gz
-# Source0-md5:	b887496ec57bb0dc8c14ad4938560066
+Source0:	https://cran.r-project.org/src/contrib/%{modulename}_%{fversion}.tar.gz
+# Source0-md5:	60d64c3f007a57f293abf261e3e6aa58
 URL:		http://www.econ.uiuc.edu/~roger/research/sparse/sparse.html
 BuildRequires:	R >= 2.8.1
 BuildRequires:	texlive-fonts-cmsuper
@@ -23,7 +23,7 @@ Basic linear algebra for sparse matrices.
 %setup -q -c
 
 %build
-R CMD build %{modulename}
+R CMD build --no-build-vignettes %{modulename}
 
 %install
 rm -rf $RPM_BUILD_ROOT
